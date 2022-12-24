@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ url_for('predict')}}" method="POST">
+
+                <h1>Prediction of confused student</h1>
+                <input type="text" name='Attention' placeholder="Attention" required="required" />
+                <input type="text" name='Mediation' placeholder="Mediation" required="required" />
+                <input type="text" name='Raw' placeholder='Raw' required="required" />
+                <input type="text" name='Delta' placeholder='Delta' required="required" />
+                <input type="text" name='Theta' placeholder='Theta' required="required" />
+                <input type="text" name='Alpha1' placeholder='Alpha1' required="required" />
+                <input type="text" name='Alpha2' placeholder='Alpha2' required="required" />
+                <input type="text" name='Beta1' placeholder='Beta1' required="required" />
+                <input type="text" name='Beta2' placeholder='Beta2' required="required" />
+                <input type="text" name='Gamma1' placeholder='Gamma1' required="required" />
+                <input type="text" name='Gamma2' placeholder='Gamma2' required="required" />
+                <!-- <input type="text" name='Age_24' placeholder='Age_24' required="required" />
+                <input type="text" name='Age_25' placeholder='Age_25' required="required" />
+                <input type="text" name='Age_28' placeholder='Age_28' required="required" />
+                <input type="text" name='Age_31' placeholder='Age_31' required="required" />
+                <input type="text" name='Gender_0' placeholder='Gender_0' required="required" />
+                <input type="text" name='Gender_1' placeholder='Gender_1' required="required" />
+                <input type="text" name='Ethnicity_Bengali' placeholder='Ethnicity_Bengali' required="required" />
+                <input type="text" name='Ethnicity_English' placeholder='Ethnicity_English' required="required" />
+                <input type="text" name='Ethnicity_Han chinese' placeholder='Ethnicity_Han chinese'
+                    required="required" /> -->
+                <label for="age">Choose age:</label>
+                <select name="Age" id="Age">
+                    <option value="Age_24" name='Age_24'>Age_24</option>
+                    <option value="Age_25" name='Age_25'>Age_25</option>
+                    <option value="Age_28" name='Age_28'>Age_28</option>
+                    <option value="Age_31" name='Age_31'>Age_31</option>
+                </select>
+                <label for="age">Choose Gender:</label>
+                <select name="Age" id="Age">
+                    <option value="Gender_0" name='Gender_0'>Gender_0</option>
+                    <option value="Gender_1" name='Gender_1'>Gender_1</option>
+                </select>
+                <label for="age">Choose Ethnicity:</label>
+                <select name="Age" id="Age">
+                    <option value="Ethnicity_Bengali" name='Ethnicity_Bengali'>Ethnicity_Bengali</option>
+                    <option value="Ethnicity_English" name='Ethnicity_English'>Ethnicity_English</option>
+                    <option value="Ethnicity_Han chinese" name='Ethnicity_Han chinese'>Ethnicity_Han chinese</option>
+                </select>
+
+
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+
+
+            <br>
+            <span>
+                <h1>{{ prediction_text }}</h1>
+            </span>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
